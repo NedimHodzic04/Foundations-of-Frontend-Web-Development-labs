@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Logo</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus nec magna ultricies finibus.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="images/portfolio1.PNG" alt="Project 1" style="width:400px">
+            <h3>Project 1</h3>
+            <p>Description of Project 1</p>
+            <a href="https://nedoxq.github.io/huddle-landing-page-with-single-introductory-section-master/">View Project</a>
+        </div>
+        <div class="project">
+            <img src="images/portfolio2.PNG" alt="Project 2" style="width:400px">
+            <h3>Project 2</h3>
+            <p>Description of Project 2</p>
+            <a href="https://nedoxq.github.io/product-preview-card-component-main/">View Project</a>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="#" method="POST">
+            <section id="contact-name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </section>
+        <section id="contact-email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </section>
+        <section id="contact-message">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </section>
+        <button type="submit">Submit</button>
+        </form>
+    </section>
+    
