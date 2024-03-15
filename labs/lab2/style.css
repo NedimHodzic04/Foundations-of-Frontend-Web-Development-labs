@@ -1,0 +1,52 @@
+
+body {
+    background-color: #85AFD4;
+    font-family:"Lato",sans-serif;
+    color:white;
+    text-align: center;
+    display:grid;
+    place-content: center;
+}
+
+h1,h2,h3,a {
+    font-weight:900;
+}
+
+div{
+    padding:5px;
+}
+
+th,td{
+    border:2px solid white;
+    padding:5px;
+}
+
+#img {
+    display:flex;
+    justify-content: center;
+}
+
+.img img{
+    width:400px;
+}
+
+button{
+    font-family:"Lato",sans-serif;
+    border:none;
+    background-color:#E47272;
+    color:white;
+    border-radius:20px;
+    padding-inline:17px;
+    padding-block:10px;
+    margin:5px;
+}
+
+input{
+    border-radius:20px;
+    border:none;
+    padding:10px;
+}
+
+p{
+    margin-top:2.5px;
+}
