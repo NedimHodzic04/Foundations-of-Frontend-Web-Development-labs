@@ -1,0 +1,66 @@
+body{
+    font-family: "DM Mono",monospace;
+    background-color:#070F2B;
+    color:#9290C3;
+    margin:0;
+}
+
+
+nav{
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom:25px;
+    background-color: #1B1A55;
+    height:100px;
+}
+
+nav a {
+    text-decoration:none;
+    color:#EEEEEE;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    font-size:18px;
+    font-weight:100;
+}
+
+nav a:hover{
+    background-color: #535C91;
+    transform: scale(102.5%);
+}
+
+.logo-click:hover{
+    background-color:#1B1A55;
+}
+
+nav .logo{
+    width:100%;
+}
+
+section footer{
+    display:grid;
+    place-content: center;
+}
+
+img{
+    width:50%;
+}
+
+section, div {
+    display:grid;
+    place-content: center;
+}
+
+.logo img {
+width:95%;
+}
+
+#logo-on-nav img{
+    width:50%;
+}
+
+#logo-on-nav{
+    display:flex;
+    align-items: center;
+}
