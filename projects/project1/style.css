@@ -10,15 +10,20 @@ body{
     text-transform: uppercase;
 }
 
-
+/* NAVBAR */
 
 nav{
     display:flex;
     justify-content: space-evenly;
-    margin-bottom:px;
     background-color: #1B1A55;
     height:100px;
     text-transform: uppercase;
+}
+
+@media (max-width:1000px){
+    nav{
+        width:100%;
+    }
 }
 
 nav .nav-item{
@@ -71,6 +76,7 @@ img{
 width:95%;
 }
 
+/* INDEX PAGE */
 
 .welcome {
     font-size: 48px;
@@ -91,6 +97,9 @@ footer{
 
     text-align: center;
 }
+
+/* CONTACT PAGE */
+
 .container{
     display:flex;
     flex-direction: column;
@@ -184,6 +193,8 @@ border: px solid #070F2B;
     top:-5px;
 }
 
+/* ABOUT PAGE */
+
 .about {
     width:650px;
     margin-top:0;
@@ -221,6 +232,8 @@ margin-inline:50px;
 textarea {
     resize: none;
   }
+
+  /* PROJECTS PAGE */
 
 #projects img {
     width:200px;
@@ -283,11 +296,19 @@ justify-content: space-evenly;
     font-size:15px;
 }
 
+/* MEDIA QUERIES */
+
 @media (max-width: 1000px) {
+
+
     nav .nav-item{
         font-size:15px;
-        width:fit-content;
     }    
+    nav{
+        justify-content: space-evenly;
+        max-width: -webkit-fill-available;
+    width: 100%;
+    }
     .welcome{
 
         text-align: center;
@@ -303,6 +324,131 @@ justify-content: space-evenly;
     footer{
         font-size:15px;
     }
+
+    .about {
+    width:300px;
+    margin-top:0;
+    padding-inline:30px;
+    height:500px;
+}
+
+.about h1{
+    color:#070F2B;
+    font-size:32px;
+}
+
+.about p{
+    color:#1B1A55;
+    font-size:18px;
+}
+
+.about .header-text{
+    display:flex;
+    width:100%;
+}
+
+.about .header-text i{
+transform: scale(2.2);
+position: relative;
+top:86.25px;
+margin-inline:60px;
+}
+#logo-nav{
+    display:none;
+}
+.container{
+}
+
+#contact {
+    margin-top:75px;
+    height:500px;
+    width:300px;
+    padding-inline:30px;
+    position:static;
+    left:195px;
+}
+
+#contact h1{
+    text-align: center;
+    transform: scale(0.9);
+    font-size:32px;
+    color:#1B1A55;
+}
+
+#contact input, textarea, button, #btn {
+    transform: scale(0.9);
+    margin-block:5px;
+    width:250px;
+    font-size:14px;
+}
+
+#contact input:focus {
+border: px solid #070F2B;
+}
+
+::placeholder,button{
+    font-size:14px;
+}
+
+#btn{
+    width:275px;
+}
+#projects img {
+    width:200px;
+}
+
+#projects h2{
+    font-size:32px;
+    color:#070F2B;
+}
+
+#projects p{
+    font-weight:500;
+    font-size:14px;
+}
+
+#projects {
+padding-top:50px;
+}
+
+.project-container {
+    height:fit-content;
+    width:300px;
+    display:flex;
+    flex-direction: column;
+    padding:25px;
+    align-items: center;
+    margin-bottom:50px;
+}
+
+.project-boxes{
+display:flex;
+flex-direction: column;
+width:300px;
+align-items: center;
+}
+
+.project-box {
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#1B1A55;
+    font-weight:600;
+
+    margin-block:5px;
+    width:250px;
+    padding:5px;
+}
+
+
+.project-box #btn {
+    padding:10px 20px;
+    text-decoration:none;
+    width:150px;
+    font-size:15px;
+}
 }
 
 
