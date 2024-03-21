@@ -166,7 +166,7 @@ button {
     background-color: #070F2B;
     color: #dddddd;
     font-weight: 700;
-    transition: transform 0.25s ease-in-out;
+    transition: transform 150ms ease-in-out;
     width: 275px;
 }
 
