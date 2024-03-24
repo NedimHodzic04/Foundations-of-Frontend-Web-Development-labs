@@ -81,10 +81,10 @@ img {
 /* INDEX PAGE */
 
 .welcome {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: bold;
 
-    background-image: linear-gradient(to right, #070F2B, #9290C3);
+    background-image: linear-gradient(to right, #6b6b6b, #9290C3);
     -webkit-background-clip: text;
     color: transparent;
     margin-block: 0;
@@ -114,9 +114,10 @@ footer {
 #contact,
 .about,
 .project-container {
+    text-align: center;
     margin-top: auto;
-    height: 650px;
-    width: 750px;
+    height: 550px;
+    width: 425px;
     display: grid;
     place-content: center;
     border-radius: 20px;
@@ -128,7 +129,7 @@ footer {
 
 
 #contact h1 {
-    font-size: 45px;
+    font-size: 36px;
     color: #1B1A55;
 }
 
@@ -136,15 +137,15 @@ footer {
 textarea,
 button,
 #btn {
-    padding: 15px 10px;
+    padding: 10px 10px;
     margin-block: 10px;
-    width: 250px;
+    width: 275px;
     border-radius: 20px;
     border: 3px solid #070F2B;
     background: #dddddd;
     font-family: "DM Mono", monospace;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     color: #1B1A55;
 
 }
@@ -157,7 +158,7 @@ button,
 button {
     color: #1B1A55;
     font-family: "DM Mono", monospace;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 16px;
 }
@@ -167,7 +168,7 @@ button {
     color: #dddddd;
     font-weight: 700;
     transition: transform 150ms ease-in-out;
-    width: 275px;
+    width: 300px;
 }
 
 #btn:hover {
@@ -203,13 +204,14 @@ button {
     position: relative;
     transform: scale(2.5);
     color: #070F2B;
-    top: -5px;
+    left:-175px;
 }
 
 /* ABOUT PAGE */
 
 .about {
-    width: 550px;
+    width: 400px;
+    height:400px;
     margin-top: 0;
     font-weight: 600;
     display: flex;
@@ -222,12 +224,13 @@ button {
 
 .about h1 {
     color: #070F2B;
-    font-size: 45px;
+    font-size: 36px;
 }
 
 .about p {
     color: #1B1A55;
-    font-size: 22px;
+    font-size: 18px;
+    font-weight:500;
 }
 
 .about .header-text {
@@ -239,7 +242,7 @@ button {
     color: #070F2B;
     transform: scale(2.5);
     position: relative;
-    top: 145px;
+    top: 112px;
     margin-inline: 50px;
 }
 
@@ -254,29 +257,29 @@ textarea {
 }
 
 #projects h2 {
-    font-size: 35px;
+    font-size: 36px;
     color: #070F2B;
 }
 
 #projects p {
     font-weight: 500;
     font-size: 14px;
+    font-weight:500;
 }
 
 #projects {
     display: grid;
     place-content: center;
-    padding-top: 50px;
-    
 }
 
 .project-container {
-    width:auto;
-    max-width:1200px;
+    margin-top: 75px;
+    width:600px;
+    height:500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px 25px 50px 25px;
+    padding: 50px 25px 75px 25px;
     margin-bottom: 25px;
 }
 
@@ -297,19 +300,19 @@ textarea {
     font-weight: 600;
 
     margin-block: 5px;
-    width: 300px;
+    width: 200px;
     padding: 5px;
 }
 
 .project-box h3 {
-    font-weight: 900;
-
+    font-weight: 500;
+    font-size:18px;
 }
 
 .project-box #btn {
-    padding: 10px 20px;
+    padding: 7.5px 15px;
     text-decoration: none;
-    width: 150px;
+    width: 125px;
     font-size: 15px;
 }
 
@@ -346,20 +349,20 @@ textarea {
     }
 
     .about {
-        width: 300px;
+        width: 250px;
         margin-top: 0;
         padding-inline: 30px;
-        height: 500px;
+        height: 350px;
     }
 
     .about h1 {
         color: #070F2B;
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .about p {
         color: #1B1A55;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .about .header-text {
@@ -368,10 +371,9 @@ textarea {
     }
 
     .about .header-text i {
-        transform: scale(2.2);
+        transform: scale(1.75);
         position: relative;
-        top: 86.25px;
-        margin-inline: 60px;
+        top: 52.5px;
     }
 
     #logo-nav {
@@ -380,13 +382,18 @@ textarea {
 
     #contact {
         margin-top: 75px;
-        height: 500px;
-        width: 300px;
+        height: 450px;
+        width: 250px;
         padding-inline: 30px;
         position: static;
         left: 195px;
     }
 
+
+    #contact i{
+        left:-120px;
+        top: 5px;
+    }
     #contact h1 {
         text-align: center;
         transform: scale(0.9);
@@ -422,12 +429,7 @@ textarea {
     }
 
     #projects h2 {
-        font-size: 32px;
-    }
-
-    #projects p {
-        font-weight: 500;
-        font-size: 14px;
+        font-size: 26px;
     }
 
     #projects {
@@ -436,12 +438,13 @@ textarea {
 
     .project-container {
         height: fit-content;
-        width: 300px;
+        width: 250px;
         display: flex;
         flex-direction: column;
         padding: 25px;
         align-items: center;
         margin-bottom: 50px;
+        margin-top:0;
     }
 
     .project-boxes {
@@ -460,8 +463,12 @@ textarea {
         font-weight: 600;
 
         margin-block: 5px;
-        width: 250px;
+        width: 200px;
         padding: 5px;
+    }
+
+    .project-box h3{
+        font-size:16px;
     }
 
 
