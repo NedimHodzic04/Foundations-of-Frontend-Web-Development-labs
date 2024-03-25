@@ -24,27 +24,29 @@
             <a href="donate.html" class="nav-item">Donate</a>
         </nav>
     </header>
-    <div class="container">
-    <section id="contact">
-        <i class="fa-solid fa-message 2xl" id="message-icon"></i>
-        <h1>Contact Me</h2>
-        <form id="contact-form" action="#">
-            <section id="contact-name">
-            <input type="text" id="name" name="name" required placeholder="Enter your name">
-        </section>
-        <section id="contact-email">
-            <input type="email" id="email" name="email" required placeholder="Enter your email">
-        </section>
-        <section id="contact-message">
-            <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
-        </section>
-        <button type="submit" id="btn">Submit</button>
-        <div class="icons">
-        <a href="github.com"><i class="fa-brands fa-square-github fa-2xl"></i></a>
-        <a href="instagram.com"><i class="fa-brands fa-square-instagram fa-2xl"></i></a>
+
+    <div class="container" id="donation">
+        <h2 class="mb-5">Support me!</h2>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="email" class="form-control" placeholder="E-mail Address" aria-label="Email" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">$</span>
+            <span class="input-group-text">0.00</span>
+
+            <input type="number" class="form-control" placeholder="Amount" aria-label="Donation" aria-describedby="basic-addon1">
+          </div>
+          <div class="form-floating">
+            <label for="floatingTextarea2" style="font-size:0.8em; position:absolute; left:12.5px;" >Include message</label>
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px;"></textarea>
+          </div>
+          <div>
+          <button type="button" class="btn btn-primary" id="btn">Donate</button>
+        </div>
+          
     </div>
         </form>
-    </section>
     <footer>
         <p>&copy; 2024 Nedim Hodzic</p>
     </footer>

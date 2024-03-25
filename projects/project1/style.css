@@ -113,7 +113,7 @@ footer {
 
 #contact,
 .about,
-.project-container {
+.project-container ,#donation{
     text-align: center;
     margin-top: auto;
     height: 550px;
@@ -173,7 +173,6 @@ button {
 
 #btn:hover {
     cursor: pointer;
-    transform: scale(105%);
     background-color: #9290C3;
     color: #1B1A55;
 }
@@ -315,6 +314,23 @@ textarea {
     width: 125px;
     font-size: 15px;
 }
+
+#donation{
+    height:550px;
+    flex-grow: 0;
+    background: #e0e0e0;
+}
+
+#donation h2{
+    color:#1B1A55;
+    font-weight:700;
+}
+
+#donation #btn{
+    padding:7.5px 15px;
+}
+
+
 
 /* MEDIA QUERIES */
 
