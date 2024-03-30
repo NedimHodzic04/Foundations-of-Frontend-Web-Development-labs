@@ -1,5 +1,5 @@
 body {
-    font-family: "DM Mono", monospace;
+    font-family: "Poppins", sans-serif;
     background-image: url(images/stacked-waves-haikei.svg);
     color: #9290C3;
     margin: 0;
@@ -7,7 +7,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    text-transform: uppercase;
+    box-sizing: border-box;
+    margin:0;
 }
 
 /* NAVBAR */
@@ -16,384 +17,219 @@ nav {
     display: flex;
     justify-content: space-evenly;
     background-color: #1B1A55;
-    height: 100px;
-    text-transform: uppercase;
+    height: 5.25rem;
 }
 
-@media (max-width:1000px) {
-    nav {
-        width: 100%;
-    }
+.navbar-toggler{
+    width:60px;
+    display: grid;
+    place-content: center;
 }
 
-nav .nav-item {
+.navbar-brand img{
+    width:125px;
+    height:125px;
+}
+
+.icons-container i{
+    text-decoration: none;
+    color:#9290C3;
+}
+
+.icons-container i:hover{
+    color:#dddddd;
+}
+
+.nav-link{
     text-decoration: none;
     color: #EEEEEE;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 20px;
-    letter-spacing: 1px;
-    ;
-    transition: transform 0.1s ease-in-out;
 }
 
-nav .nav-item:hover {
-    background-color: #535C91;
+.navbar-nav{
+    gap:16px;
 }
 
-nav a:hover {
-    transform: scale(105%);
+.nav-link:hover{
+    color: #9290C3 !important;
 }
 
-nav .logo {
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.active{
+    color:#9290C3 !important;
 }
 
-nav .logo a {
-    width: 70%;
-    transition: transform 0.1s ease-in-out;
-}
 
 section footer {
     display: grid;
     place-content: center;
 }
 
-img {
-    width: 50%;
-}
-
-.logo,
-.welcome {
-    display: grid;
-    place-content: center;
-}
-
-.logo img {
-    width: 95%;
-}
 
 /* INDEX PAGE */
 
-.welcome {
-    font-size: 36px;
-    font-weight: bold;
-
-    background-image: linear-gradient(to right, #6b6b6b, #9290C3);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-block: 0;
-}
 
 footer {
     margin-top: auto;
     bottom: 0;
     top: 85px;
-    font-weight: 900;
-    font-size: 18px;
-
+    font-weight: 600;
+    font-size: 14px;
     text-align: center;
 }
+
+.content{
+    height:675px;
+    opacity: 100;
+    transition:0.2s ease-in;
+    flex-grow: 1;
+    }
+
+.info-thing p{
+    color:#dddddd;
+    text-align: justify;
+    width:400px;
+}
+
+.img-container img{
+    border-radius: 100% !important;
+    width:350px;
+    border:2px solid #dddddd;
+}
+
+.img-container{
+    width:400px;
+    gap:24px;
+}
+
+.content{
+    gap:55px;
+    line-height: 1.75rem;
+}
+
 
 /* CONTACT PAGE */
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    flex-grow: 1;
-}
-
-#contact,
-.about,
-.project-container ,#donation{
-    text-align: center;
-    margin-top: auto;
-    height: 550px;
-    width: 425px;
-    display: grid;
+.contact-form{
+    display:grid;
     place-content: center;
-    border-radius: 20px;
-    background: #e0e0e0;
-    box-shadow: 5px 5px 0px #5a5a5a,
-        -5px -5px 0px #ffffff;
-    transition: all 500ms;
+    margin-top:auto;
 }
 
-
-#contact h1 {
-    font-size: 36px;
-    color: #1B1A55;
+.mb-3{
+    width:20rem;
 }
 
-#contact input,
-textarea,
-button,
-#btn {
-    padding: 10px 10px;
-    margin-block: 10px;
-    width: 275px;
-    border-radius: 20px;
-    border: 3px solid #070F2B;
-    background: #dddddd;
-    font-family: "DM Mono", monospace;
-    font-size: 18px;
-    font-weight: 500;
-    color: #1B1A55;
-
+.contact-form .btn{
+    border:1px solid #dddddd !important;
+    margin-top:0.5rem;
 }
 
-#contact input:focus {
-    border: px solid #070F2B;
+.mb-3 input::placeholder{
+    color:#070F2B;
 }
 
-::placeholder,
-button {
-    color: #1B1A55;
-    font-family: "DM Mono", monospace;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 16px;
+.mb-3 label{
+    color:#9290C3;
 }
 
-#btn {
-    background-color: #070F2B;
-    color: #dddddd;
-    font-weight: 700;
-    transition: transform 150ms ease-in-out;
-    width: 300px;
-}
-
-#btn:hover {
-    cursor: pointer;
-    background-color: #9290C3;
-    color: #1B1A55;
-}
-
-
-.icons i {
-    color: #070F2B;
-    transition: transform 0.1s ease-in-out;
-}
-
-.icons {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
-}
-
-.icons a {
-    width: 28px;
-    margin-inline: 10px;
-    transform: scale(1.1);
-}
-
-.icons i:hover {
-    color: #9290C3;
-}
-
-#message-icon {
-    position: relative;
-    transform: scale(2.5);
-    color: #070F2B;
-    left:-175px;
-}
-
-/* ABOUT PAGE */
-
-.about {
-    width: 400px;
-    height:400px;
-    margin-top: 0;
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-inline: 50px;
-    text-align: justify;
-    transition: all 500ms;
-}
-
-.about h1 {
-    color: #070F2B;
-    font-size: 36px;
-}
-
-.about p {
-    color: #1B1A55;
-    font-size: 18px;
-    font-weight:500;
-}
-
-.about .header-text {
-    display: flex;
-    width: 100%;
-}
-
-.about .header-text i {
-    color: #070F2B;
-    transform: scale(2.5);
-    position: relative;
-    top: 112px;
-    margin-inline: 50px;
-}
-
-textarea {
-    resize: none;
-}
 
 /* PROJECTS PAGE */
 
-#projects img {
-    width: 200px;
-}
-
-#projects h2 {
-    font-size: 36px;
-    color: #070F2B;
-}
-
-#projects p {
-    font-weight: 500;
-    font-size: 14px;
-    font-weight:500;
-}
-
-#projects {
-    display: grid;
-    place-content: center;
-}
-
-.project-container {
-    margin-top: 75px;
-    width:600px;
-    height:500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 25px 75px 25px;
-    margin-bottom: 25px;
-}
-
-.project-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    max-width:925px;
-}
-
-.project-box {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+.h2{
+    display:flex;
     justify-content: center;
+    gap:12px;
+    margin-top:10rem;
+    margin-bottom:2rem;
+    color:#dddddd;
+}
+
+.h2 i{
+position: relative;
+top:5px;
+}
+
+.card{
+    border:none;
+}
+
+.projects-container{
+    
+    display:flex;
+    justify-content: center;
+    gap:24px;
     align-items: center;
-    color: #1B1A55;
-    font-weight: 600;
-
-    margin-block: 5px;
-    width: 200px;
-    padding: 5px;
 }
 
-.project-box h3 {
-    font-weight: 500;
-    font-size:18px;
+.projects-container .btn{
+    width:10rem;
 }
 
-.project-box #btn {
-    padding: 7.5px 15px;
-    text-decoration: none;
-    width: 125px;
-    font-size: 15px;
+.projects-container .btn, .contact-form .btn{
+    border:2px solid #070F2B;
+    background-color:#1B1A55;
+    color:#dddddd;
 }
 
-#donation{
-    height:550px;
-    flex-grow: 0;
-    background: #e0e0e0;
-}
-
-#donation h2{
+.btn:hover{
+    background-color: #dddddd;
     color:#1B1A55;
-    font-weight:700;
 }
-
-#donation #btn{
-    padding:7.5px 15px;
-}
-
-
 
 /* MEDIA QUERIES */
 
 @media (max-width: 1000px) {
-    
-    nav .nav-item {
-        font-size: 15px;
+    body{
+        background-image: url(images/stacked-waves-haikei-mobile.svg);
     }
 
-    nav {
-        justify-content: space-evenly;
-        max-width: -webkit-fill-available;
-        width: 100%;
+    .contact-form {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .welcome {
+.projects-container{
+    flex-direction: column;
+    height:1400px;
+}
+.h2{
+    gap:12px;
+    margin-top:5rem;
+}
+        .navbar-brand img{
+            width:90px !important;
+            height:90px !important;
+        }
 
-        text-align: center;
-        font-size: 24px;
-        margin: 0;
+        .img-container img{
+            border-radius: 100% !important;
+            width:250px;
+            border:2px solid #dddddd;
+        }
+
+        .img-container{
+            gap:40px;
+        }
+    .content p{
+        font-size:13px;
+        width:300px;
     }
-
-    .logo {
-        display: flex;
-        justify-content: center;
-        transform: scale(0.9);
-
-    }
-
     footer {
         font-size: 15px;
     }
+    .content{
+        line-height: 1.25rem;
+        gap:40px;
+    }
+    .info-thing{
+        width:300px;
 
-    .about {
-        width: 250px;
-        margin-top: 0;
-        padding-inline: 30px;
-        height: 350px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .about h1 {
-        color: #070F2B;
-        font-size: 26px;
-    }
-
-    .about p {
-        color: #1B1A55;
-        font-size: 16px;
-    }
-
-    .about .header-text {
-        display: flex;
-        width: 100%;
-    }
-
-    .about .header-text i {
-        transform: scale(1.75);
-        position: relative;
-        top: 52.5px;
-    }
-
-    #logo-nav {
-        display: none;
+    .info-thing h1{
+        text-align: left;
     }
 
     #contact {
@@ -436,77 +272,5 @@ textarea {
         font-size: 14px;
     }
 
-    #btn {
-        width: 275px;
-    }
-
-    #projects img {
-        width: 200px;
-    }
-
-    #projects h2 {
-        font-size: 26px;
-    }
-
-    #projects {
-        padding-top: 50px;
-    }
-
-    .project-container {
-        height: fit-content;
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        padding: 25px;
-        align-items: center;
-        margin-bottom: 50px;
-        margin-top:0;
-    }
-
-    .project-boxes {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        align-items: center;
-    }
-
-    .project-box {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-weight: 600;
-
-        margin-block: 5px;
-        width: 200px;
-        padding: 5px;
-    }
-
-    .project-box h3{
-        font-size:16px;
-    }
-
-
-    .project-box #btn {
-        padding: 10px 20px;
-        width: 150px;
-        font-size: 15px;
-    }
-
-    .container {
-        overflow: hidden;
-    }
-
-    #message-icon {
-        transform: scale(2);
-        top: -5px;
-        left:115px;
-    }
-}
-
-@media (max-width:500px){
-    body {
-        background: url(images/stacked-waves-haikei-mobile.svg)
-    }
+    
 }
