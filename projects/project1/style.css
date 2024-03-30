@@ -140,10 +140,9 @@ footer {
     gap:12px;
     margin-top:10rem;
     margin-bottom:2rem;
-    color:#dddddd;
 }
 
-.h2 i{
+i{
 position: relative;
 top:5px;
 }
@@ -173,6 +172,14 @@ top:5px;
 .btn:hover{
     background-color: #dddddd;
     color:#1B1A55;
+}
+
+.modal{
+    color:#070F2B;
+}
+
+.modal-footer button:hover{
+    border:1px solid #070F2B !important;
 }
 
 /* MEDIA QUERIES */
