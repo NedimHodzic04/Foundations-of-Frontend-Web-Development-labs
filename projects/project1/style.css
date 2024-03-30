@@ -177,7 +177,7 @@ top:5px;
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     body{
         background-image: url(images/stacked-waves-haikei-mobile.svg);
     }
