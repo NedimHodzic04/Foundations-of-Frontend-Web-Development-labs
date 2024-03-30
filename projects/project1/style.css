@@ -138,9 +138,16 @@ footer {
     display:flex;
     justify-content: center;
     gap:12px;
-    margin-top:10rem;
+    margin-top:auto;
     margin-bottom:2rem;
 }
+
+
+.mobile-layout{
+    visibility: hidden;
+    position: absolute;
+}
+
 
 i{
 position: relative;
@@ -152,7 +159,6 @@ top:5px;
 }
 
 .projects-container{
-    
     display:flex;
     justify-content: center;
     gap:24px;
@@ -183,11 +189,13 @@ top:5px;
 }
 
 /* MEDIA QUERIES */
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width:576px){
     body{
         background-image: url(images/stacked-waves-haikei-mobile.svg);
     }
+
+@media screen and (max-width: 1000px) {
+    
 
     .contact-form {
         display:flex;
