@@ -34,11 +34,14 @@ nav {
 .icons-container i{
     text-decoration: none;
     color:#9290C3;
+    transition: all 250ms ease-in-out;
 }
 
 .icons-container i:hover{
     color:#dddddd;
+    transform: rotate(12deg);
 }
+
 
 .nav-link{
     text-decoration: none;
@@ -134,17 +137,35 @@ footer {
     width:20rem;
 }
 
+.mb-3 input, .mb-3 textarea, .mb-3 input:focus, .mb-3 textarea:focus{
+    background-color: transparent;
+    color:#dddddd;
+    transition: all 200ms ease-in-out;
+}
+
+.mb-3 input:focus, .mb-3 textarea:focus{
+    padding: 0.75rem;
+}
+
 .contact-form .btn{
     border:1px solid #dddddd !important;
     margin-top:0.5rem;
 }
 
-.mb-3 input::placeholder{
-    color:#070F2B;
+.contact-form .btn:hover{
+    border:1px solid #1B1A55 !important;
+}
+
+.mb-3 input::placeholder, .mb-3 textarea::placeholder{
+    color:#dddddd;
 }
 
 .mb-3 label{
     color:#9290C3;
+}
+
+.mb-3 input, mb-3 textarea{
+    color:#dddddd;
 }
 
 
@@ -211,7 +232,7 @@ top:2.5px;
     opacity:1;
 }
 
-@media screen and (max-width:1000px){
+@media (max-width:1000px){
     .projects-container{
         display:flex;
         justify-content: center;
@@ -253,12 +274,12 @@ top:2.5px;
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width:576px){
+@media (max-width:576px){
     body{
         background-image: url(images/stacked-waves-haikei-mobile.svg);
     }
 }
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
     
 
     .contact-form {
