@@ -79,14 +79,24 @@ footer {
 .content{
     height:675px;
     opacity: 100;
-    transition:0.2s ease-in;
     flex-grow: 1;
+    overflow: hidden;
     }
+
 
 .info-thing p{
     color:#dddddd;
     text-align: justify;
     width:400px;
+}
+
+.info-thing{
+    transform: scale(0.5) translateY(-500%);
+    transition: all 750ms ease-out;
+}
+
+.info-thing.active{
+    transform: scale(1) translateY(0);
 }
 
 .img-container img{
@@ -98,6 +108,12 @@ footer {
 .img-container{
     width:400px;
     gap:24px;
+    transform: scale(0.5) translateY(500%);
+    transition: all 750ms ease-out;
+}
+
+.img-container.active{
+    transform: scale(1) translateY(0);
 }
 
 .content{
@@ -138,10 +154,15 @@ footer {
     display:flex;
     justify-content: center;
     gap:12px;
-    margin-top:auto;
-    margin-bottom:2rem;
+    margin-top:3rem;
+    margin-bottom:1.5rem;
+    
 }
 
+.h2 h1{
+    font-size:2rem;
+    font-weight:600;
+}
 
 .mobile-layout{
     visibility: hidden;
@@ -151,18 +172,61 @@ footer {
 
 i{
 position: relative;
-top:5px;
+top:2.5px;
 }
 
 .card{
     border:none;
+    width:225px;
+    background: #dddddd;
+}
+
+.card h5{
+    font-size:1rem;
+    font-weight:600;
+}
+
+.card p{
+    font-size:0.9rem;
+}
+
+.row1{
+    grid-row: 1;
+}
+
+.row2{
+    grid-row:2;
 }
 
 .projects-container{
-    display:flex;
-    justify-content: center;
-    gap:24px;
+    display:grid;
+    place-content: center;
+    gap:18px;
     align-items: center;
+    opacity:0;
+    transition: all 1000ms ease-in-out;
+}
+
+.projects-container.active{
+    opacity:1;
+}
+
+@media screen and (max-width:1000px){
+    .projects-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:100%;
+        flex-grow: 1;
+        margin-top:27.5rem;
+        margin-bottom:30rem !important;
+    }
+    .h2{
+        margin-top:3rem !important;
+    }
+    .h2 h1{
+        font-size:1.75rem;
+    }
 }
 
 .projects-container .btn{
@@ -193,7 +257,7 @@ top:5px;
     body{
         background-image: url(images/stacked-waves-haikei-mobile.svg);
     }
-
+}
 @media screen and (max-width: 1000px) {
     
 
@@ -226,7 +290,8 @@ top:5px;
             gap:40px;
         }
     .content p{
-        font-size:13px;
+        font-size:16px;
+        line-height: 1.25rem;
         width:300px;
     }
     footer {

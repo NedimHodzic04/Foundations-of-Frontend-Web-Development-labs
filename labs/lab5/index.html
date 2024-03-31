@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Table</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button onclick="openModal()">Click</button>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p id="modal-text"></p>
+  </div>
+</div>
+<table id="user-table">
+  <thead>
+    <tr>
+      <th onclick="sortTable(0)">ID</th>
+      <th onclick="sortTable(1)">Name</th>
+      <th onclick="sortTable(2)">Country</th>
+      <th onclick="sortTable(3)">Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="table-body"></tbody>
+</table>
+<script src="script.js"></script>
+</body>
+</html>
