@@ -1,34 +1,37 @@
-/*!
-* Start Bootstrap - New Age v6.0.7 (https://startbootstrap.com/theme/new-age)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-new-age/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+// THEME SWITCHER
+const themeSwitchButton = document.querySelector('#themeSwitchButton');
+const body = document.querySelector('#body');
 
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 74,
-        });
-    };
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-
+themeSwitchButton.addEventListener('click', function() {
+    body.classList.toggle('light-theme');
+    body.classList.toggle('dark-theme');
 });
+//
+
+
+//PHOTO GALLERY
+var modal = document.getElementById("imageModal");
+
+var span = document.getElementsByClassName("close")[0];
+
+var images = document.getElementsByClassName("thumbnail");
+
+var modalImg = document.getElementById("modalImage");
+
+for (var i = 0; i < images.length; i++) {
+    images[i].onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.getAttribute("data-image");
+    }
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+//
