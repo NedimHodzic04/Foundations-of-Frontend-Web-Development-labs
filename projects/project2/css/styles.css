@@ -2,22 +2,24 @@
   --accent-color:#4f0bcd;
 }
 body {
-  transition: background-color 0.5s, color 0.5s;
+  transition:all 200ms;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "Reddit Sans", sans-serif;
+  margin:0;
+
 }
 
 .dark-theme {
-  --background-color: #202020;
+  --background-color: hsl(263, 26%, 10%);
   --text-color: #ddd;
-
+  --navbar-color: hsl(263, 26%, 15%);
 }
 
 .light-theme {
   --background-color: #ddd;
   --text-color: #000;
-
+  --navbar-color: hsl(0, 0%, 80%);
 }
 
 button {
@@ -74,4 +76,20 @@ button {
   top: 10px;
   right: 20px;
   cursor: pointer;
+}
+
+/* navbar */
+
+#navbar {
+  height:70px;
+  display:flex;
+  justify-content: center;
+  gap:2.5rem;
+  background-color: var(--navbar-color);
+  align-items: center;
+}
+
+#navbar a{
+  color:var(--text-color);
+  text-decoration: none;
 }

@@ -34,4 +34,22 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-//
+//DATA DRIVEN CONTENT
+$.ajax({
+    url: 'js/blogposts.json',
+    dataType: 'json',
+    success: function(data) {
+        console.log(data); // Log the data to check if it's being retrieved
+        $.each(data, function(index, post) {
+            var postElement = $('<div>').addClass('post');
+            var titleElement = $('<h2>').text(post.title);
+            var contentElement = $('<p>').text(post.content);
+            postElement.append(titleElement, contentElement);
+            $('#posts-container').append(postElement);
+        });
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.error('Error loading JSON file:', errorThrown);
+    }
+});
+
