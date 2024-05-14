@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  $("main#spapp > section").height($(document).height() - 60);
-
   var app = $.spapp({
     defaultView  : "#view_xxx",
     templateDir  : "./tpl/",
@@ -14,8 +12,11 @@ $(document).ready(function() {
     onCreate: function() {  },
     onReady: function() {  }
   });
+
+  app.route({
+    view: "view_3"
+  })
   
   app.run();
 
 });
-
