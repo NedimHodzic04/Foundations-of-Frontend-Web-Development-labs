@@ -2,9 +2,19 @@
 const themeSwitchButton = document.querySelector('#themeSwitchButton');
 const body = document.querySelector('#body');
 
+const theme = localStorage.getItem('theme');
+
+if (theme) {
+    document.body.classList.add(theme);
+}
+
 themeSwitchButton.addEventListener('click', function() {
-    body.classList.toggle('light-theme');
     body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')){
+        localStorage.setItem('theme','dark-theme');
+    } else {
+        localStorage.removeItem('theme');
+    }
 });
 //
 

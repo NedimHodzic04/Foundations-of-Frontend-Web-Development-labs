@@ -1,5 +1,8 @@
 :root{
   --accent-color:#4f0bcd;
+  --background-color: #ffffff;
+  --text-color: #000;
+  --navbar-color: hsl(0, 0%, 90%);
 }
 body {
   transition:all 200ms;
@@ -16,19 +19,13 @@ body {
   --navbar-color: hsl(263, 26%, 15%);
 }
 
-.light-theme {
-  --background-color: #ddd;
-  --text-color: #000;
-  --navbar-color: hsl(0, 0%, 80%);
-}
-
 button {
   padding:15px 10px;
   border-radius: 0.75rem;
   border:none;
   background-color: var(--accent-color);
   color:#ddd;
-  font-weight:700;
+  font-weight:600;
   cursor:pointer;
 }
 
@@ -87,9 +84,16 @@ button {
   gap:2.5rem;
   background-color: var(--navbar-color);
   align-items: center;
+
 }
 
 #navbar a{
   color:var(--text-color);
   text-decoration: none;
+  font-weight:600;
 }
+
+#navbar a:hover{
+  text-decoration: underline;
+}
+
