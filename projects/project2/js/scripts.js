@@ -12,14 +12,17 @@ themeSwitchButton.addEventListener('click', function() {
     body.classList.toggle('dark-theme');
     if (document.body.classList.contains('dark-theme')){
         localStorage.setItem('theme','dark-theme');
+        toastr.info("Theme changed to dark mode!");
     } else {
         localStorage.removeItem('theme');
+        toastr.info("Theme changed to light mode!");
     }
+    
 });
-//
 
 
-//PHOTO GALLERY
+
+//PHOTO GALLERY - MODAL 
 var modal = document.getElementById("imageModal");
 
 var span = document.getElementsByClassName("close")[0];
@@ -44,12 +47,14 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
 //DATA DRIVEN CONTENT
 $.ajax({
     url: 'js/blogposts.json',
     dataType: 'json',
     success: function(data) {
-        console.log(data); // Log the data to check if it's being retrieved
+        console.log(data); 
         $.each(data, function(index, post) {
             var postElement = $('<div>').addClass('post');
             var titleElement = $('<h2>').text(post.title);

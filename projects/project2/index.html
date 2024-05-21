@@ -10,24 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
-<body id ="body">
-    <nav id = "navbar" role="navigation">
+<body id="body">
+    <nav id="navbar" role="navigation">
         <div class="home"><a href="#view_1">Home</a></div>
         <div class="blog"><a href="#view_2">Blog</a></div>
         <div class="contact"><a href="#view_3">Contact</a></div>
         <button id="themeSwitchButton">Switch Theme</button>
-
     </nav>
     
-    
-    
     <main id="spapp" role="main">
-
         <section id="view_xxx"></section>
-        <section id="view_2"><div id="posts-container">
-        </div></section>
+        <section id="view_2">
+            <div id="posts-container"></div>
+        </section>
         <section id="view_3">
             <div class="container">
                 <h2>Registration Form</h2>
@@ -45,40 +42,51 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
+                        <label for="email">Date of Birth:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
                         <label for="password">Password:</label>
+                        <div class="power-container"> 
+                            <div id="power-point"></div> 
+                        </div> 
                         <input type="password" id="password" name="password" minlength="8" required>
+                        
                     </div>
                     <button type="submit">Register</button>
                 </form>
             </div>
         </section>
-        <section id="view_4"> 
-            <div class="gallery">
-            <div class="gallery-images">
-                <div class="image-box">
-                <img src="image1.jpg" alt="Image 1" class="thumbnail" data-image="image1.jpg"></div>
-                <div class="image-box">
-                    <img src="image2.jpg" alt="Image 2" class="thumbnail" data-image="image2.jpg"></div>
-                    <div class="image-box">
-                        <img src="image3.jpg" alt="Image 3" class="thumbnail" data-image="image3.jpg"></div>
-            </div>
-        </div>
-    
-        <div id="imageModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImage">
-        </div>
-    </section>
+        <section id="view_4"></section>
         <section id="view_1">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit molestiae ipsam, ad ratione eaque cum in, nemo quam nisi corporis sed, dicta recusandae dolores vero nihil enim quia atque obcaecati.</p>
+            <div class="gallery">
+                <div class="gallery-images">
+                    <div class="image-box">
+                        <img src="image1.jpg" alt="Image 1" class="thumbnail" data-image="image1.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="image2.jpg" alt="Image 2" class="thumbnail" data-image="image2.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="image3.jpg" alt="Image 3" class="thumbnail" data-image="image3.jpg">
+                    </div>
+                </div>
+            </div>
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
         </section>
-      </main>
+    </main>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="js/passwordStrengthIndicator.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.spapp.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src ="js/passwordStrengthIndicator.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.spapp.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </html>
