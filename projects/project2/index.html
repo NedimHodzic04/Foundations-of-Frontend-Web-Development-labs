@@ -14,14 +14,23 @@
 </head>
 <body id="body">
     <nav id="navbar" role="navigation">
+        <div class="nav-group">
         <div class="home"><a href="#view_1">Home</a></div>
         <div class="blog"><a href="#view_2">Blog</a></div>
         <div class="contact"><a href="#view_3">Contact</a></div>
+        <div class="faq"><a href="#view_xxx">FAQ</a></div>
+    </div>
         <button id="themeSwitchButton">Switch Theme</button>
     </nav>
     
     <main id="spapp" role="main">
-        <section id="view_xxx"></section>
+        <section id="view_xxx" class="faq">
+            <div class="faq-box">
+            <h1>Frequently Asked Questions</h1>
+            <div class="show-div">Lorem ipsum dolor sit amet consectetur adipisicing elit?</div>
+            <div class="click-div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eaque repellendus nobis ipsa sint, beatae harum necessitatibus id nisi velit perspiciatis omnis, excepturi optio enim, suscipit ab iure voluptate sunt.</div>
+        </div>
+        </section>
         <section id="view_2">
             <div id="posts-container"></div>
         </section>
@@ -64,13 +73,16 @@
             <div class="gallery">
                 <div class="gallery-images">
                     <div class="image-box">
-                        <img src="image1.jpg" alt="Image 1" class="thumbnail" data-image="image1.jpg">
+                        <img src="images/avenue-815297_1280.jpg" alt="Image 1" class="thumbnail" data-image="images/avenue-815297_1280.jpg">
                     </div>
                     <div class="image-box">
-                        <img src="image2.jpg" alt="Image 2" class="thumbnail" data-image="image2.jpg">
+                        <img src="images/lake-8763490_1280.jpg" alt="Image 2" class="thumbnail" data-image="images/lake-8763490_1280.jpg">
                     </div>
                     <div class="image-box">
-                        <img src="image3.jpg" alt="Image 3" class="thumbnail" data-image="image3.jpg">
+                        <img src="images/road-1072823_1280.jpg" alt="Image 3" class="thumbnail" data-image="images/road-1072823_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/tree-736885_1280.jpg" alt="Image 4" class="thumbnail" data-image="images/tree-736885_1280.jpg">
                     </div>
                 </div>
             </div>
@@ -78,6 +90,7 @@
                 <span class="close">&times;</span>
                 <img class="modal-content" id="modalImage">
             </div>
+            
         </section>
     </main>
     

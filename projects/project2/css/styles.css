@@ -11,7 +11,6 @@ body {
   color: var(--text-color);
   font-family: "Reddit Sans", sans-serif;
   margin:0;
-
 }
 
 .dark-theme {
@@ -44,15 +43,23 @@ button:hover {
 /* Gallery styles */
 .gallery {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
+  height:85vh;
   margin-top: 20px;
+  align-items: center;
+}
+
+.gallery-images{
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .thumbnail {
-  width: 200px;
-  height: 150px;
-  margin: 10px;
+  width: 300px;
+  height:200px;
+  margin: 1rem;
   cursor: pointer;
 }
 
@@ -92,11 +99,19 @@ button:hover {
 #navbar {
   height:70px;
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
   gap:2.5rem;
   background-color: var(--navbar-color);
   align-items: center;
+  padding-inline:15vw;
+  flex-shrink: 1;
+}
 
+.nav-group {
+  display:flex;
+  flex-direction: row;
+  gap:1rem;
+  flex-wrap: nowrap;
 }
 
 #navbar a{
@@ -107,6 +122,8 @@ button:hover {
 
 #navbar a:hover{
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent-color);
 }
 
 /* FORM */
@@ -161,4 +178,17 @@ input[type="date"] {
   transition: 0.5s; 
 }
 
+/* VIEW STYLING */
 
+section{
+  padding-inline:15vw;
+}
+
+.faq-box{
+  display:flex;
+  flex-direction: column;
+  height:85vh;
+  justify-content: center;
+  align-items: center;
+  max-width:400px;
+}
