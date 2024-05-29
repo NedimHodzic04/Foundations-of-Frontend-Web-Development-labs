@@ -1,20 +1,15 @@
 $(document).ready(function() {
 
   var app = $.spapp({
-    defaultView  : "#view_xxx",
+    defaultView  : "#view_1",
     templateDir  : "./tpl/",
     pageNotFound : "error_404"
   });
   
-  app.route({
-    view : "view_1",
-    load : "tpl/view_1.html",
-    onCreate: function() {  },
-    onReady: function() {  }
-  });
 
   app.route({
-    view: "view_3"
+    view:"view_more",
+    load: "view_more.html"
   })
   
   app.run();

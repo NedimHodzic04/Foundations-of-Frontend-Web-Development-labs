@@ -1,8 +1,8 @@
 :root{
-  --accent-color:#4f0bcd;
-  --background-color: #ffffff;
+  --accent-color: #007ea7;
+  --background-color: hsl(0, 0%, 90%);
   --text-color: hsl(0, 0%, 20%);
-  --navbar-color: hsl(0, 0%, 90%);
+  --navbar-color: #ffffff;
   --power-bar: #cdcdcd;
 }
 body {
@@ -11,23 +11,34 @@ body {
   color: var(--text-color);
   font-family: "Reddit Sans", sans-serif;
   margin:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dark-theme {
-  --background-color: hsl(245, 25%, 10%);
+  --background-color: hsl(0, 0%, 5%);
   --text-color: hsl(0, 0%, 80%);
-  --navbar-color: hsl(245, 25%, 15%);
+  --navbar-color: hsl(0, 0%, 9%);
   --power-bar: #2E424D;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  border:1px solid var(--text-color);
-  background-color: var(--accent-color);
-  color:#ddd;
+/*  --background-color: hsl(245, 25%, 10%);
+  --text-color: hsl(0, 0%, 80%);
+  --navbar-color: hsl(245, 25%, 15%);
+  --power-bar: #2E424D; */
+
+button, .button{
+  padding: 8.5px 15px;
+  border: none;
+  outline: 2px solid var(--text-color);
+  background-color: var(--background-color);
+  color:var(--text-color);
   font-weight:600;
   cursor:pointer;
-  transition: all 250ms;
+  transition: all 250ms; 
+  font-family:"Reddit Sans",sans-serif;
+  border-radius: 0.25rem;
 }
 
 .btn-group{
@@ -36,18 +47,25 @@ button {
 }
 
 button:hover {
-  background-color: var(--navbar-color);
+  background-color: var(--accent-color);
   color:var(--text-color)
 }
+
 
 /* Gallery styles */
 .gallery {
   display: flex;
   flex-direction: row;
+  height:100%;
   justify-content: center;
-  height:85vh;
-  margin-top: 20px;
   align-items: center;
+
+}
+
+@media screen and (max-width:950px) {
+  .gallery{
+    margin-block:10rem;
+  }
 }
 
 .gallery-images{
@@ -99,39 +117,57 @@ button:hover {
 #navbar {
   height:70px;
   display:flex;
-  justify-content: space-between;
+  justify-content:space-around;
   gap:2.5rem;
   background-color: var(--navbar-color);
   align-items: center;
-  padding-inline:15vw;
+  width:100%;
   flex-shrink: 1;
+  position:fixed;
+  top:0;
 }
 
 .nav-group {
   display:flex;
   flex-direction: row;
-  gap:1rem;
+  gap:2rem;
   flex-wrap: nowrap;
 }
 
-#navbar a{
+#navbar a, .view_more a{
   color:var(--text-color);
   text-decoration: none;
   font-weight:600;
 }
 
-#navbar a:hover{
+#navbar a:hover, .view_more a:hover{
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--accent-color);
+  text-underline-offset: 0.5rem;
+  
+}
+
+.view_more{
+  display:flex;
+  justify-content: center;
+  margin-bottom:2.5rem;
+}
+
+.view_more{
+  font-size:1.5rem;
+}
+
+#buttons{
+  display:flex;
+  gap:1rem;
 }
 
 /* FORM */
 .container {
   width:325px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
+  padding: 2rem;
+  background-color: var(--navbar-color);
 }
 
 .error{
@@ -139,7 +175,7 @@ button:hover {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 label {
@@ -153,11 +189,19 @@ input[type="password"],
 input[type="date"] {
   width:95%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border:none;
+  font-size:16px;
   font-family: "Reddit Sans", sans-serif;
   background-color: var(--background-color);
   color:var(--text-color);
+
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+  outline:2px solid var(--text-color);
 }
 
 /* PASSWORD STRENGTH INDICATOR */
@@ -165,16 +209,14 @@ input[type="date"] {
 .power-container { 
   background-color: var(--power-bar);
   width: 101.5%;
-  height: 15px; 
-  border-radius: 5px; 
+  height: 0.5rem; 
   margin-bottom:0.5rem;
 } 
 
 .power-container #power-point { 
   background-color: #D73F40; 
-  width: 1%; 
+  width: 0%;
   height: 100%; 
-  border-radius: 5px; 
   transition: 0.5s; 
 }
 
@@ -184,11 +226,144 @@ section{
   padding-inline:15vw;
 }
 
+/*FAQ SECTION */
+
+.faq{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .faq-box{
   display:flex;
   flex-direction: column;
-  height:85vh;
   justify-content: center;
   align-items: center;
-  max-width:400px;
+  width:35vw;
+  background-color: var(--navbar-color);
+  padding: 2rem;
+  border-radius: 0.25rem;
 }
+
+/* POSTS */
+
+.post, .article, #weather-data{
+  background-color: var(--navbar-color);
+  text-align: justify;
+  padding:1rem;
+  margin:1.5rem;
+  border-radius:0.25rem;
+}
+
+#weather-data{
+  background-color: hsl(261, 66%, 44%);
+  width:300px;
+}
+
+.post >{
+  margin-right:0.75rem;
+  margin-top:1rem;
+}
+
+.post .button-container{
+  display:flex;
+  justify-content: flex-end;
+  gap:0.75rem;
+}
+
+.post .edit-button{
+  background-color: var(--accent-color);
+  padding: 0.35rem 0.75rem;
+}
+
+.post .delete-button{
+  background-color:#D73F40;
+  padding: 0.25rem 0.75rem;
+
+}
+
+.post .edit-button:hover, .delete-button:hover{
+  background-color: var(--background-color);
+}
+
+
+#posts-container, .container, .faq-box, #news, #weather, .view-more-section
+  {
+  margin-top:6rem;
+  margin-bottom:2.5rem;
+}
+
+.gallery{
+  margin-top:5rem;
+  margin-bottom:2.5rem;
+}
+
+
+
+/* FAQ accordion menu */
+
+.click-div{
+  display:flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.click-div:hover{
+  background-color:var(--background-color);
+}
+
+
+.show-div{
+  max-height:0;
+  overflow:hidden;
+  transition: max-height 500ms ease;
+  background-color:var(--background-color);
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.show-div, .click-div{
+  padding-inline:1rem;
+  width:100%;
+}
+
+.show-div.active{
+  max-height:150px !important;
+}
+
+.click-div p{
+  font-weight:700;
+}
+
+
+.hidden{
+  display:none !important;
+}
+
+.icon {
+  width:30px;
+}
+
+.article a{
+  font-size:16px;
+  color:var(--text-color);
+  text-decoration-color: var(--accent-color);
+  text-decoration-thickness: 3px;
+  font-weight:900;
+  text-underline-offset: 0.25rem;
+}
+
+.article a:hover, .article a:focus{
+  color:var(--accent-color);
+}
+
+/* WEATHER BOX */
+
+#weather-data{
+  color:var(--background-color);
+  background-color:var(--text-color);
+  border-radius:0.25rem;
+}
+

@@ -35,7 +35,7 @@ $(document).ready(function() {
                 type: $(form).attr('method'),
                 data: $(form).serialize(),
                 success: function(response) {
-                    toastr.success('Form submitted successfully!');
+                    toastr.success('Registered succesfully!');
                     form.reset();
                 },
                 error: function(jqXHR, textStatus, errorThrown) {

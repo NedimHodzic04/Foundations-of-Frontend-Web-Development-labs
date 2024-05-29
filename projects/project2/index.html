@@ -9,26 +9,174 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 <body id="body">
     <nav id="navbar" role="navigation">
         <div class="nav-group">
-        <div class="home"><a href="#view_1">Home</a></div>
+        <div class="home"><a href="#view_1">Gallery</a></div>
         <div class="blog"><a href="#view_2">Blog</a></div>
-        <div class="contact"><a href="#view_3">Contact</a></div>
         <div class="faq"><a href="#view_xxx">FAQ</a></div>
+        <div class="news"><a href="#view_4">News</a></div>
+        <div class="weather"><a href="#view_5">Weather</a></div>
     </div>
+    <div id="buttons">
+    <form action="#view_3">        
+        <button class="register" href="#view_3">Register</button>
+    </form>
         <button id="themeSwitchButton">Switch Theme</button>
+    </div>
     </nav>
     
     <main id="spapp" role="main">
+        <section id="view_1">
+            <div class="gallery">
+                <div class="gallery-images">
+                    <div class="image-box">
+                        <img src="images/avenue-815297_1280.jpg" alt="Image 1" class="thumbnail" data-image="images/avenue-815297_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/lake-8763490_1280.jpg" alt="Image 2" class="thumbnail" data-image="images/lake-8763490_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/road-1072823_1280.jpg" alt="Image 3" class="thumbnail" data-image="images/road-1072823_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/tree-736885_1280.jpg" alt="Image 4" class="thumbnail" data-image="images/tree-736885_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/dog-7719758_1280.jpg" alt="Image 5" class="thumbnail" data-image="images/dog-7719758_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/bird-8763079_1280.jpg" alt="Image 6" class="thumbnail" data-image="images/bird-8763079_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/avenue-815297_1280.jpg" alt="Image 1" class="thumbnail" data-image="images/avenue-815297_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/lake-8763490_1280.jpg" alt="Image 2" class="thumbnail" data-image="images/lake-8763490_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/road-1072823_1280.jpg" alt="Image 3" class="thumbnail" data-image="images/road-1072823_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/tree-736885_1280.jpg" alt="Image 4" class="thumbnail" data-image="images/tree-736885_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/dog-7719758_1280.jpg" alt="Image 5" class="thumbnail" data-image="images/dog-7719758_1280.jpg">
+                    </div>
+                    <div class="image-box">
+                        <img src="images/bird-8763079_1280.jpg" alt="Image 6" class="thumbnail" data-image="images/bird-8763079_1280.jpg">
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+            <div class="view_more">
+                <a href="#view_more" data-load="tpl/view_more.html">View More</a>
+            </div>
+        </section>
+        <section id="view_more" data-load="view_more.html"></section>
         <section id="view_xxx" class="faq">
-            <div class="faq-box">
-            <h1>Frequently Asked Questions</h1>
-            <div class="show-div">Lorem ipsum dolor sit amet consectetur adipisicing elit?</div>
-            <div class="click-div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eaque repellendus nobis ipsa sint, beatae harum necessitatibus id nisi velit perspiciatis omnis, excepturi optio enim, suscipit ab iure voluptate sunt.</div>
+            <div class="faq">
+                <div class="faq-box">
+                    <h1>Frequently Asked Questions</h1>
+                    
+                    <div class="click-div">
+                        <p>What is the return policy?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>Our return policy allows returns within 30 days of purchase. Items must be in original condition with all tags attached.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>How do I track my order?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>You can track your order using the tracking number provided in your confirmation email. Visit our tracking page for more details.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>What payment methods are accepted?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>We accept all major credit cards, PayPal, and Apple Pay. Other payment methods may be available depending on your location.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>Can I change my shipping address?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>Yes, you can change your shipping address before the order is shipped. Please contact our support team for assistance.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>How do I cancel my order?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>To cancel your order, please contact our support team as soon as possible. Orders that have already been shipped cannot be canceled.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>Do you offer gift wrapping?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>Yes, we offer gift wrapping for an additional fee. You can select the gift wrapping option at checkout.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>Are your products eco-friendly?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>We are committed to sustainability and many of our products are eco-friendly. Please refer to the product details for specific information.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>What is the warranty on your products?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>Our products come with a one-year warranty. If you encounter any issues, please contact our support team for assistance.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>How can I contact customer support?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>You can contact our customer support via email, phone, or live chat. Visit our contact page for more details.</p>
+                    </div>
+                    
+                    <div class="click-div">
+                        <p>Do you offer international shipping?</p>
+                        <img src="images/icon-plus.svg" alt="" class="icon plus-icon">
+                        <img src="images/icon-minus.svg" alt="" class="icon hidden minus-icon">
+                    </div>
+                    <div class="show-div">
+                        <p>Yes, we offer international shipping to many countries. Shipping rates and times vary by location.</p>
+                    </div>
+                </div>
+                
         </div>
         </section>
         <section id="view_2">
@@ -36,7 +184,7 @@
         </section>
         <section id="view_3">
             <div class="container">
-                <h2>Registration Form</h2>
+                <h2>Register your account</h2>
                 <form id="registrationForm">
                     <div class="form-group">
                         <label for="firstName">First Name:</label>
@@ -68,30 +216,22 @@
                 </form>
             </div>
         </section>
-        <section id="view_4"></section>
-        <section id="view_1">
-            <div class="gallery">
-                <div class="gallery-images">
-                    <div class="image-box">
-                        <img src="images/avenue-815297_1280.jpg" alt="Image 1" class="thumbnail" data-image="images/avenue-815297_1280.jpg">
-                    </div>
-                    <div class="image-box">
-                        <img src="images/lake-8763490_1280.jpg" alt="Image 2" class="thumbnail" data-image="images/lake-8763490_1280.jpg">
-                    </div>
-                    <div class="image-box">
-                        <img src="images/road-1072823_1280.jpg" alt="Image 3" class="thumbnail" data-image="images/road-1072823_1280.jpg">
-                    </div>
-                    <div class="image-box">
-                        <img src="images/tree-736885_1280.jpg" alt="Image 4" class="thumbnail" data-image="images/tree-736885_1280.jpg">
-                    </div>
-                </div>
-            </div>
-            <div id="imageModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="modalImage">
+        <section id="view_4">
+            <div id="news">
+                <h2>Latest News</h2>
+                <div id="news-articles"></div>
+                <div id="news-error" style="color: red;"></div>
+            </div>            
+        </section>
+        <section id="view_5">
+            <div id="weather">
+                <h2>Current Weather</h2>
+                <div id="weather-data"></div>
+                <div id="weather-error" style="color: red;"></div>
             </div>
             
         </section>
+        
     </main>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -103,5 +243,9 @@
     <script src="js/validation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src ="js/passwordStrengthIndicator.js"></script>
+    <script src="https://kit.fontawesome.com/56c6aea4de.js" crossorigin="anonymous"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/newsAPI.js"></script>
+    <script src="js/weatherAPI.js"></script>
 </body>
 </html>
