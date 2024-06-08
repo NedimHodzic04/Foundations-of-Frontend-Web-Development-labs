@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button, CardActionArea, CardActions, Link } from '@mui/material';
 
 export default function ProductCard({ image, title, description }) {
   return (
@@ -25,8 +25,8 @@ export default function ProductCard({ image, title, description }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
+        <Button size="small" variant="text" component={Link} to="/register">
+          Order
         </Button>
       </CardActions>
     </Card>

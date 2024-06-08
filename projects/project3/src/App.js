@@ -4,29 +4,49 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Register from './pages/Register.js';
 import FAQ from './pages/FAQ';
-import Products from './pages/Products';
+import Models from './pages/Models.js';
 import About from './pages/About';
-import { ThemeProvider } from '@mui/material/styles';
-import Footer from './components/Footer.js'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+import Footer from './components/Footer.js';
 import './App.css';
 
 function App() {
+  const [themeMode, setThemeMode] = useState(() => {
+    const savedTheme = localStorage.getItem('themeMode');
+    return savedTheme || 'light';
+  });
 
+  const toggleTheme = () => {
+    setThemeMode((prevMode) => {
+      const newMode = prevMode === 'light' ? 'dark' : 'light';
+      localStorage.setItem('themeMode', newMode);
+      return newMode;
+    });
+  };
+
+  const theme = createTheme({
+    palette: {
+      mode: themeMode,
+    },
+  });
 
   return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
-        <Navbar/>
-
+        <Navbar toggleTheme={toggleTheme} />
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/models" element={<Models />} />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>
-        <Footer></Footer>
+        <Footer />
       </Router>
+    </ThemeProvider>
   );
 }
 

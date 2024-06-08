@@ -9,14 +9,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
-import bmwImage from '../images/bmw-logo.svg'
+import bmwImage from '../images/bmw-logo.svg';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useTheme } from '@mui/material/styles';
 
-const pages = ['Home', 'About', 'Products', 'FAQ', 'Register'];
+const pages = ['Home', 'Models', 'Register', 'About', 'FAQ'];
 
-function Navbar() {
+function Navbar({ toggleTheme }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const theme = useTheme();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -27,28 +30,48 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{p:0.5}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={bmwImage} style={{ display: { xs: 'none', md: 'flex' }, mr: 1, width:'52px', height: '52px'}}/>
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}  // Use Link component instead of 'a' tag
-            to="/"  // Path to the home page
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-          </Typography>
+          <Box sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexGrow: { md: 0, xs: 1 }
+          }}>
+            <Typography
+              variant="h6"
+              noWrap
+              component={Link}
+              to="/"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              <img src={bmwImage} alt="BMW Logo" style={{ marginRight: '24px', width: '48px', height: '48px' }} />
+            </Typography>
+          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                className="nav-button"
+                key={page}
+                component={Link}
+                to={`/${page.toLowerCase()}`}
+                sx={{ mx: 2, color: 'white',fontWeight:400, fontSize:'16px' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -73,49 +96,23 @@ function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} to={`/${page.toLowerCase()}`}>  {/* Use Link component for routing */}
+                <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} to={`/${page.toLowerCase()}`}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component={Link}  // Use Link component instead of 'a' tag
-            to="/"  // Path to the home page
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+
+
+          <IconButton
+            sx={{ ml: 1 }}
+            onClick={toggleTheme}
+            color="inherit"
           >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                variant="outlined"
-                key={page}
-                component={Link}  // Use Link component instead of 'a' tag
-                to={`/${page.toLowerCase()}`}  // Path to the page
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
 
         </Toolbar>
       </Container>

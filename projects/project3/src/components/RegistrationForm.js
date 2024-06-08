@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Box } from '@mui/material';
+import { TextField, Button, Typography, Box, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, FormGroup, Checkbox } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 
-function RegistrationForm(){
-const [formData, setFormData] = useState({
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
     name: '',
+    surname: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    gender: '', 
+    agreeToTerms: false, 
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, checked, type } = e.target;
+    const newValue = type === 'checkbox' ? checked : value; 
     setFormData(prevState => ({
       ...prevState,
-      [name]: value
+      [name]: newValue
     }));
   };
 
@@ -25,7 +31,6 @@ const [formData, setFormData] = useState({
     const formErrors = validateForm(formData);
     setErrors(formErrors);
     if (Object.keys(formErrors).length === 0) {
-
       setSubmitted(true);
       console.log(formData);
     }
@@ -37,17 +42,24 @@ const [formData, setFormData] = useState({
     if (!data.name.trim()) {
       errors.name = 'Name is required';
     }
-
+    if (!data.surname.trim()) {
+      errors.surname = 'Surname is required';
+    }
     if (!data.email.trim()) {
       errors.email = 'Email is required';
     } else if (!isValidEmail(data.email)) {
       errors.email = 'Invalid email address';
     }
-
     if (!data.password.trim()) {
       errors.password = 'Password is required';
     } else if (data.password !== data.confirmPassword) {
       errors.confirmPassword = 'Passwords do not match';
+    }
+    if (!data.agreeToTerms) {
+      errors.agreeToTerms = 'You must agree to the Terms of Service';
+    }
+    if (!data.gender) {
+      errors.gender = 'Gender is required';
     }
 
     return errors;
@@ -59,17 +71,20 @@ const [formData, setFormData] = useState({
   };
 
   return (
-    <Box sx={{ maxWidth: 400, margin: 'auto', padding: 2, mt:7.5 }}>
-      <Typography variant="h4" gutterBottom>
-        Registration Form
+    <Box sx={{ maxWidth: 400, margin: 'auto', padding: 2 }}>
+      <Typography variant="h4" gutterBottom sx={{ fontWeight: 700, textAlign: 'center' }}>
+        Register your account
       </Typography>
       {submitted ? (
-        <Typography variant="body1">Thank you for registering!</Typography>
+        <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+          You have successfully registered your account! Check your inbox for a confirmation email.
+        </Alert>
       ) : (
-        <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+        <form onSubmit={handleSubmit} style={{ width: '100%', marginBlock: '1rem' }}>
           <Box sx={{ width: '100%', mb: 2 }}>
             <TextField
               fullWidth
+              variant="filled"
               label="Name"
               id="name"
               name="name"
@@ -82,6 +97,37 @@ const [formData, setFormData] = useState({
           <Box sx={{ width: '100%', mb: 2 }}>
             <TextField
               fullWidth
+              variant="filled"
+              label="Surname"
+              id="surname"
+              name="surname"
+              value={formData.surname}
+              onChange={handleChange}
+              error={!!errors.surname}
+              helperText={errors.surname}
+            />
+          </Box>
+          <Box sx={{ width: '100%', mb: 2 }}>
+            <FormControl component="fieldset" error={!!errors.gender}>
+              <FormLabel component="legend">Gender</FormLabel>
+              <RadioGroup
+                row
+                aria-label="gender"
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+              >
+                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                <FormControlLabel value="other" control={<Radio />} label="Other" />
+              </RadioGroup>
+              {errors.gender && <Typography variant="caption" color="error">{errors.gender}</Typography>}
+            </FormControl>
+          </Box>
+          <Box sx={{ width: '100%', mb: 2 }}>
+            <TextField
+              fullWidth
+              variant="filled"
               label="Email"
               type="email"
               id="email"
@@ -95,6 +141,7 @@ const [formData, setFormData] = useState({
           <Box sx={{ width: '100%', mb: 2 }}>
             <TextField
               fullWidth
+              variant="filled"
               label="Password"
               type="password"
               id="password"
@@ -108,6 +155,7 @@ const [formData, setFormData] = useState({
           <Box sx={{ width: '100%', mb: 2 }}>
             <TextField
               fullWidth
+              variant="filled"
               label="Confirm Password"
               type="password"
               id="confirmPassword"
@@ -118,7 +166,20 @@ const [formData, setFormData] = useState({
               helperText={errors.confirmPassword}
             />
           </Box>
-          <Button type="submit" variant="contained" color="primary" size="large" sx={{ width: '100%' }}>Register</Button>
+          <Box sx={{ width: '100%', mb: 2 }}>
+            <FormGroup>
+              <FormControlLabel
+                control={<Checkbox checked={formData.agreeToTerms} onChange={handleChange} name="agreeToTerms" />}
+                label={
+                  <Typography>
+                    I agree to the <a href="/terms-of-service" style={{color:'blue'}}>Terms of Service</a>
+                  </Typography>
+                }
+              />
+              {errors.agreeToTerms && <Typography variant="caption" color="error">{errors.agreeToTerms}</Typography>}
+            </FormGroup>
+          </Box>
+          <Button type="submit" variant="contained" color="primary" size="large" sx={{ width: '100%' ,backgroundColor:'	#0166B1', color:'#fff'}}>Register</Button>
         </form>
       )}
     </Box>
